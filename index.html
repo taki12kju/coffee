@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  & mr.snickers </title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F5ECD7;
+      --dark-brown: #1C1009;
+      --espresso: #3B1F0A;
+      --caramel: #C07B2F;
+      --gold: #D4A84B;
+      --warm-white: #FAF6EF;
+      --mocha: #6B3A1F;
+      --fog: rgba(245, 236, 215, 0.08);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: var(--dark-brown);
+      color: var(--cream);
+      font-family: 'Tajawal', sans-serif;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.35;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4rem;
+      background: linear-gradient(to bottom, rgba(28, 16, 9, 0.95), transparent);
+      backdrop-filter: blur(4px);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      font-style: italic;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      opacity: 0.8;
+      transition: opacity 0.3s, color 0.3s;
+    }
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--gold);
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 2rem 4rem;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 30% 50%, rgba(192, 123, 47, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 80% 30%, rgba(59, 31, 10, 0.6) 0%, transparent 60%),
+        linear-gradient(135deg, #1C1009 0%, #2A1208 50%, #1C1009 100%);
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: drift 10s ease-in-out infinite alternate;
+    }
+    .blob-1 {
+      width: 500px;
+      height: 500px;
+      background: rgba(192, 123, 47, 0.12);
+      top: -100px;
+      right: -100px;
+      animation-delay: 0s;
+    }
+    .blob-2 {
+      width: 350px;
+      height: 350px;
+      background: rgba(107, 58, 31, 0.2);
+      bottom: 0;
+      left: -80px;
+      animation-delay: 3s;
+    }
+    .blob-3 {
+      width: 250px;
+      height: 250px;
+      background: rgba(212, 168, 75, 0.1);
+      top: 40%;
+      left: 40%;
+      animation-delay: 6s;
+    }
+    @keyframes drift {
+      from {
+        transform: translate(0, 0) scale(1);
+      }
+      to {
+        transform: translate(30px, -30px) scale(1.05);
+      }
+    }
+    .hero-content {
+      position: relative;
+      text-align: center;
+      max-width: 860px;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(212, 168, 75, 0.4);
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 1.1;
+      color: var(--cream);
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .hero h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+    .hero-subtitle {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(245, 236, 215, 0.7);
+      line-height: 1.8;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+    .hero-cta {
+      display: inline-flex;
+      gap: 1rem;
+      margin-top: 3rem;
+      animation: fadeUp 0.8s 0.6s ease both;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--caramel), var(--gold));
+      color: var(--dark-brown);
+      padding: 0.9rem 2.5rem;
+      border-radius: 50px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 8px 30px rgba(192, 123, 47, 0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(192, 123, 47, 0.5);
+    }
+    .btn-ghost {
+      border: 1px solid rgba(245, 236, 215, 0.3);
+      color: var(--cream);
+      padding: 0.9rem 2.5rem;
+      border-radius: 50px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      background: rgba(212, 168, 75, 0.1);
+    }
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0.4;
+      animation: fadeUp 1s 1s ease both;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 1.5s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,
+      100% {
+        transform: scaleY(1);
+        opacity: 0.4;
+      }
+      50% {
+        transform: scaleY(1.3);
+        opacity: 0.8;
+      }
+    }
+    section {
+      padding: 6rem 2rem;
+      position: relative;
+    }
+    .section-label {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      text-align: center;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      text-align: center;
+      color: rgba(245, 236, 215, 0.55);
+      font-weight: 300;
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto 4rem;
+      line-height: 1.8;
+    }
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 1.2rem auto;
+    }
+    .about {
+      background: linear-gradient(to bottom, var(--dark-brown), var(--espresso));
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+    .about-text h2 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+    .about-text p {
+      color: rgba(245, 236, 215, 0.65);
+      font-size: 1rem;
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+    .stats-row {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(245, 236, 215, 0.5);
+      letter-spacing: 1px;
+    }
+    .about-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .visual-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--espresso);
+      border: 1px solid rgba(212, 168, 75, 0.15);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      transition: border-color 0.3s, transform 0.3s;
+      min-height: 140px;
+    }
+    .visual-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+    .visual-card:nth-child(2) {
+      margin-top: 2rem;
+    }
+    /* صور الـ visual-card */
+    .vc-img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: rgba(28, 16, 9, 0.4);
+    }
+    .vc-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--cream);
+      text-align: center;
+    }
+    .menu {
+      background: var(--espresso);
+    }
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid rgba(212, 168, 75, 0.25);
+      color: rgba(245, 236, 215, 0.6);
+      padding: 0.65rem 1.8rem;
+      border-radius: 50px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: linear-gradient(135deg, var(--caramel), var(--gold));
+      color: var(--dark-brown);
+      border-color: transparent;
+      font-weight: 700;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .menu-card {
+      background: rgba(28, 16, 9, 0.7);
+      border: 1px solid rgba(212, 168, 75, 0.12);
+      border-radius: 20px;
+      padding: 1.8rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      display: none;
+    }
+    .menu-card.visible {
+      display: block;
+      animation: cardIn 0.4s ease both;
+    }
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .menu-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle at top right, rgba(212, 168, 75, 0.12), transparent 70%);
+    }
+    .menu-card:hover {
+      border-color: rgba(212, 168, 75, 0.4);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    /* صورة الكارد — بدل الإيموجي */
+    .card-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      display: block;
+      background: rgba(28, 16, 9, 0.4);
+    }
+    .card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--cream);
+      margin-bottom: 0.4rem;
+    }
+    .card-name-ar {
+      font-size: 0.95rem;
+      color: rgba(245, 236, 215, 0.5);
+      margin-bottom: 0.8rem;
+    }
+    .card-desc {
+      font-size: 0.88rem;
+      color: rgba(245, 236, 215, 0.5);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+    }
+    .card-price span {
+      font-size: 0.75rem;
+      color: rgba(245, 236, 215, 0.4);
+      font-family: 'Tajawal', sans-serif;
+    }
+    .badge {
+      font-size: 0.7rem;
+      background: rgba(192, 123, 47, 0.2);
+      border: 1px solid rgba(192, 123, 47, 0.4);
+      color: var(--caramel);
+      padding: 0.25rem 0.7rem;
+      border-radius: 50px;
+    }
+    .gallery {
+      background: linear-gradient(to bottom, var(--espresso), var(--dark-brown));
+    }
+    .gallery-strip {
+      display: flex;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .gallery-item {
+      flex: 1;
+      min-width: 0;
+      border-radius: 16px;
+      aspect-ratio: 3/4;
+      background: var(--espresso);
+      border: 1px solid rgba(212, 168, 75, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: flex 0.5s ease, border-color 0.3s;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item:hover {
+      flex: 2.5;
+      border-color: var(--gold);
+    }
+    /* صورة الغاليري */
+    .gi-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gi-img {
+      opacity: 1;
+    }
+    .gallery-item .gi-label {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 1.2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--cream);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s 0.1s, transform 0.3s 0.1s;
+      z-index: 2;
+    }
+    .gallery-item:hover .gi-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .gallery-item .gi-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(28, 16, 9, 0.85), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1;
+    }
+    .gallery-item:hover .gi-bg {
+      opacity: 1;
+    }
+    .contact {
+      background: var(--dark-brown);
+      text-align: center;
+    }
+    .contact-box {
+      max-width: 700px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(59, 31, 10, 0.8), rgba(28, 16, 9, 0.9));
+      border: 1px solid rgba(212, 168, 75, 0.2);
+      border-radius: 28px;
+      padding: 4rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 70% 30%, rgba(192, 123, 47, 0.07), transparent 60%);
+    }
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      align-items: center;
+    }
+    .info-icon {
+      font-size: 1.6rem;
+    }
+    .info-label {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .info-val {
+      font-size: 0.95rem;
+      color: rgba(245, 236, 215, 0.7);
+    }
+    .social-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .soc-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(212, 168, 75, 0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
+      text-decoration: none;
+      color: var(--cream);
+    }
+    .soc-btn:hover {
+      border-color: var(--gold);
+      background: rgba(212, 168, 75, 0.12);
+      transform: translateY(-3px);
+    }
+    footer {
+      background: #0F0804;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.82rem;
+      color: rgba(245, 236, 215, 0.3);
+      letter-spacing: 1px;
+    }
+    footer em {
+      color: var(--gold);
+      font-style: normal;
+    }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .gallery-strip {
+        flex-wrap: wrap;
+      }
+      .gallery-item {
+        flex: unset;
+        width: calc(50% - 0.5rem);
+        aspect-ratio: 1;
+      }
+      .gallery-item:hover {
+        flex: unset;
+      }
+      .contact-box {
+        padding: 2.5rem 1.5rem;
+      }
+      .about-visual {
+        display: none;
+      }
+    }
+    /* Admin Styles */
+    .admin-trigger-btn {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(28, 16, 9, 0.85);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+      z-index: 101;
+    }
+    .admin-trigger-btn:hover {
+      transform: rotate(30deg) scale(1.1);
+      background: var(--gold);
+      color: var(--dark-brown);
+      box-shadow: 0 6px 25px rgba(212, 168, 75, 0.4);
+    }
+    .admin-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 8, 4, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .admin-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    .admin-modal {
+      background: linear-gradient(135deg, var(--espresso), var(--dark-brown));
+      border: 1px solid var(--gold);
+      border-radius: 24px;
+      width: 90%;
+      max-width: 550px;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      transform: translateY(30px);
+      transition: transform 0.3s ease;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .admin-modal-overlay.active .admin-modal {
+      transform: translateY(0);
+    }
+    .admin-modal-close {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: transparent;
+      border: none;
+      color: var(--cream);
+      font-size: 1.5rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .admin-modal-close:hover {
+      opacity: 1;
+      color: var(--gold);
+    }
+    .admin-modal h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+      color: rgba(245, 236, 215, 0.8);
+      font-weight: 500;
+      text-align: right;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      background: rgba(15, 8, 4, 0.5);
+      border: 1px solid rgba(212, 168, 75, 0.3);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: var(--cream);
+      font-family: 'Tajawal', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.3s;
+      width: 100%;
+      direction: rtl;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .image-options {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.3rem;
+    }
+    .image-option-tab {
+      flex: 1;
+      padding: 0.4rem;
+      font-size: 0.8rem;
+      background: rgba(245, 236, 215, 0.05);
+      border: 1px solid rgba(212, 168, 75, 0.2);
+      border-radius: 6px;
+      color: rgba(245, 236, 215, 0.6);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .image-option-tab.active {
+      background: rgba(212, 168, 75, 0.15);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .image-input-container {
+      margin-top: 0.5rem;
+    }
+    .admin-btn-save {
+      background: linear-gradient(135deg, var(--caramel), var(--gold));
+      color: var(--dark-brown);
+      border: none;
+      border-radius: 50px;
+      padding: 0.8rem 2rem;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .admin-btn-save:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(192, 123, 47, 0.4);
+    }
+    .admin-btn-logout {
+      background: transparent;
+      color: #ff4d4d;
+      border: 1px solid rgba(255, 77, 77, 0.3);
+      border-radius: 50px;
+      padding: 0.5rem 1.5rem;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 0.85rem;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 0.8rem;
+      transition: background 0.3s;
+      text-align: center;
+    }
+    .admin-btn-logout:hover {
+      background: rgba(255, 77, 77, 0.1);
+      border-color: #ff4d4d;
+    }
+    .delete-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 77, 77, 0.9);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.3s, background 0.3s;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    .delete-badge:hover {
+      transform: scale(1.1);
+      background: #ff3333;
+    }
+    body.admin-mode .delete-badge {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">Crêpe & Café ☕</div>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="order.html">Order </a></li>
+    </ul>
+  </nav>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="hero-content">
+      <span class="hero-tag">☕ قهوة · كريب · دفء</span>
+      <h1>
+        Unforgattable <br>
+        <em>moment</em>
+      </h1>
+      <p class="hero-subtitle">
+        قهوة فاخرة وكريب طازج محضّران بعناية واهتمام<br>
+        كل كوب — كل لقمة — تجربة مختلفة
+      </p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn-primary">اكتشف القائمة</a>
+        <a href="#contact" class="btn-ghost">ابحث عنّا</a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2>مكانك الدافئ<br>في <em>كل يوم</em></h2>
+        <p>نحن مقهى صغير بروح كبيرة — نؤمن أن الفنجان الواحد قادر على تغيير مزاجك ويومك. نستخدم أجود حبوب القهوة ونحضّر
+          كريبنا يدوياً كل صباح.</p>
+        <p>سواء جئت للاسترخاء وحدك أو لقضاء وقت مع أصحابك، ستجد هنا ما يناسبك.</p>
+        <div class="stats-row">
+          <div class="stat"><span class="stat-num">+30</span><span class="stat-label">نوع في القائمة</span></div>
+          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">طبيعي وطازج</span></div>
+          <div class="stat"><span class="stat-num">★4.9</span><span class="stat-label">تقييم الزبائن</span></div>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <!-- حط src ديالك هنا -->
+        <div class="visual-card">
+          <img class="vc-img" src="ph6.png" alt="قهوة">
+          <span class="vc-label">قهوة</span>
+        </div>
+        <div class="visual-card">
+          <img class="vc-img" src="ph45.png" alt="كريب">
+          <span class="vc-label">كريب</span>
+        </div>
+        <div class="visual-card">
+          <img class="vc-img" src="ph4.png" alt="إضافات فاخرة">
+          <span class="vc-label">إضافات فاخرة</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <span class="section-label reveal">Our menu</span>
+    <h2 class="section-title reveal"> Something you'll love in one place</h2>
+    <div class="divider reveal"></div>
+    <p class="section-sub reveal">We've selected the best we can offer from coffee, crepes, and desserts</p>
+    <div class="menu-tabs reveal">
+      <button class="tab-btn active" onclick="filterMenu('all')">الكل</button>
+      <button class="tab-btn" onclick="filterMenu('coffee')">☕ قهوة</button>
+      <button class="tab-btn" onclick="filterMenu('crepe')">🥞 كريب</button>
+      <button class="tab-btn" onclick="filterMenu('waffle')">🥞 وافل</button>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      <!-- COFFEE -->
+      <div class="menu-card visible" data-cat="coffee">
+        <img class="card-img" src="ph9.png" alt="Espresso">
+        <div class="card-name">Espresso</div>
+        <div class="card-name-ar">إسبريسو</div>
+        <div class="card-desc">تقطير مركّز من أجود حبوب العربيكا، جرعة قوية وعميقة</div>
+        <div class="card-footer">
+          <div class="card-price">50<span>دج</span></div>
+          <span class="badge">الأكثر طلبًا</span>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="coffee">
+        <img class="card-img" src="ph34.png" alt="Cappuccino">
+        <div class="card-name">Cappuccino</div>
+        <div class="card-name-ar">كابوتشينو</div>
+        <div class="card-desc">إسبريسو مع رغوة حليب ناعمة، توازن مثالي بين القوة والنعومة</div>
+        <div class="card-footer">
+          <div class="card-price">200 <span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="coffee">
+        <img class="card-img" src="ph8.png" alt="Mocha">
+        <div class="card-name">Mocha</div>
+        <div class="card-name-ar">snickers</div>
+        <div class="card-desc">قهوة مع chocolate snickers — لمحبّي الحلو والمرّ</div>
+        <div class="card-footer">
+          <div class="card-price">100 <span>دج</span></div>
+          <span class="badge">المفضّل</span>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="coffee">
+        <img class="card-img" src="phé.png" alt="Cappuccino">
+        <div class="card-name">ice coffee</div>
+        <div class="card-name-ar">قهوة مثلجة </div>
+        <div class="card-desc">إ</div>
+        <div class="card-footer">
+          <div class="card-price">150 <span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+        </div>
+      </div>
+      <!-- CREPES -->
+      <div class="menu-card visible" data-cat="crepe">
+        <img class="card-img" src="ph45.png" alt="Nutella Crêpe">
+        <div class="card-name">Nutella Crêpe</div>
+        <div class="card-name-ar">كريب chocolate</div>
+        <div class="card-desc">كريب طازج مع نوتيلا   لا يُقاوم</div>
+        <div class="card-footer">
+          <div class="card-price">200 <span>دج</span></div>
+          <span class="badge">الأكثر طلبًا</span>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="crepe">
+        <img class="card-img" src="ph2.png" alt="Fruits Crêpe">
+        <div class="card-name">Fruits Crêpe</div>
+        <div class="card-name-ar">كريب فراولة</div>
+        <div class="card-desc">كريب مع فراولة طازجة وchoclote — خفيف ومنعش</div>
+        <div class="card-footer">
+          <div class="card-price">400 <span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="crepe">
+        <img class="card-img" src="ph3.png" alt="Cheese Crêpe">
+        <div class="card-name">Cheese Crêpe</div>
+        <div class="card-name-ar"> كريب بنان</div>
+        <div class="card-desc"></div>
+        <div class="card-footer">
+          <div class="card-price">350 <span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+        </div>
+        </div>
+         <div class="menu-card visible" data-cat="crepe">
+           <img class="card-img" src="ph7.png" alt="special Crêpe">
+          <div class="card-name">special Crêpe</div>
+          <div class="card-name-ar">كريب </div>
+          <div class="card-footer">
+            <div class="card-price">4500 <span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+          </div>
+        </div>
+             <div class="menu-card visible" data-cat="crepe">
+           <img class="card-img" src="ph.png" alt="special Crêpe">
+          <div class="card-name">special Crêpe</div>
+          <div class="card-name-ar">كريب </div>
+          <div class="card-footer">
+            <div class="card-price">4500 <span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+          </div>
+        </div>
+              <div class="menu-card visible" data-cat="crepe">
+           <img class="card-img" src="pht.png" alt="special Crêpe">
+          <div class="card-name">special Crêpe</div>
+          <div class="card-name-ar">كريب </div>
+          <div class="card-footer">
+            <div class="card-price">1000 <span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+          </div>
+        </div>
+              <div class="menu-card visible" data-cat="crepe">
+           <img class="card-img" src="pho.png" alt="special Crêpe">
+          <div class="card-name"> Crêpe</div>
+          <div class="card-name-ar">كريب </div>
+          <div class="card-footer">
+            <div class="card-price"> 350<span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+          </div>
+        </div>
+            <div class="menu-card visible" data-cat="crepe">
+           <img class="card-img" src="phy.png" alt="special Crêpe">
+          <div class="card-name"> Crêpe</div>
+          <div class="card-name-ar">كريب </div>
+          <div class="card-footer">
+            <div class="card-price">400 <span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+          </div>
+        </div>
+            <div class="menu-card visible" data-cat="crepe">
+           <img class="card-img" src="phr.png" alt="special Crêpe">
+          <div class="card-name"> Crêpe  fruits</div>
+          <div class="card-name-ar">كريب  فواكه</div>
+          <div class="card-footer">
+            <div class="card-price">450 <span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+          </div>
+        </div>
+            <div class="menu-card visible" data-cat="crepe">
+           <img class="card-img" src="phi.png" alt="special Crêpe">
+          <div class="card-name"> Crêpe snikers </div>
+          <div class="card-name-ar">كريب سنيكرز</div>
+          <div class="card-footer">
+            <div class="card-price">350 <span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+          </div>
+        </div>
+            <div class="menu-card visible" data-cat="crepe">
+           <img class="card-img" src="phe.png" alt="special Crêpe">
+          <div class="card-name">special Crêpe</div>
+          <div class="card-name-ar">كريب </div>
+          <div class="card-footer">
+            <div class="card-price"> 550<span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+          </div>
+        </div>
+              <div class="menu-card visible" data-cat="crepe">
+           <img class="card-img" src="ph&.png" alt="special Crêpe">
+          <div class="card-name"> Crêpe mix fruits</div>
+          <div class="card-name-ar">كريب مزيج فواكه</div>
+          <div class="card-footer">
+            <div class="card-price">550 <span>دج</span></div>
+          <a href="order.html" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+          </div>
+        </div>
+    </div>
+  </section>
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <span class="section-label reveal">معرض الصور</span>
+    <h2 class="section-title reveal">أجواؤنا تتكلّم</h2>
+    <div class="divider reveal"></div>
+  </section>
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <span class="section-label reveal"> contact for us</span>
+    <h2 class="section-title reveal"> we are here for you</h2>
+    <div class="divider reveal"></div>
+    <div class="contact-box reveal">
+      <p style="color: rgba(245,236,215,0.6); font-size:1rem; line-height:1.8;">
+        مرحباً بك دائماً في <strong style="color:var(--gold)">Crêpe & Café</strong> — يسعدنا لقاؤك ومشاركتك اللحظات
+        الجميلة
+      </p>
+      <div class="contact-info">
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <span class="info-label">location</span>
+          <span class="info-val">Ourgla /وسط المدينة</span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">🕐</span>
+          <span class="info-label">أوقات العمل</span>
+          <span class="info-val">08:00 – 23:00 يومياً</span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📞</span>
+          <span class="info-label">اتصل بنا</span>
+          <span class="info-val">0673603016</span>
+        </div>
+      </div>
+      <div class="social-row">
+        <a class="soc-btn" href="#" title="Instagram">📸</a>
+        <a class="soc-btn" href="#" title="Facebook">📘</a>
+        <a class="soc-btn" href="#" title="WhatsApp">💬</a>
+        <a class="soc-btn" href="#" title="TikTok">🎵</a>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <em>Crêpe & Café</em> — صُنع بـ ☕ وكثير من الحبّ</p>
+    <p>created by @tnv8gy</p>
+  </footer>
+  <!-- Floating Admin Button -->
+  <button class="admin-trigger-btn" onclick="openAdmin()" title="لوحة التحكم">🔒</button>
+  <!-- Admin Control Panel Modal -->
+  <div class="admin-modal-overlay" id="adminModal">
+    <div class="admin-modal">
+      <button class="admin-modal-close" onclick="closeAdmin()">✕</button>
+      <h3>إدارة قائمة الطعام</h3>
+      
+      <!-- Password Prompt Panel -->
+      <div id="authPanel">
+        <div class="form-group">
+          <label for="adminPass">كلمة المرور:</label>
+          <input type="password" id="adminPass" placeholder="أدخل كلمة المرور لدخول لوحة التحكم">
+        </div>
+        <button class="admin-btn-save" onclick="checkPassword()">دخول</button>
+      </div>
+      <!-- Admin Actions Form -->
+      <div id="formPanel" style="display: none;">
+        <div class="form-group">
+          <label for="itemCat">التصنيف:</label>
+          <select id="itemCat">
+            <option value="coffee">☕ قهوة</option>
+            <option value="crepe">🥞 كريب</option>
+            <option value="waffle">🧇 وافل</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="itemName">اسم الصنف بالإنجليزية (الاسم الرئيسي):</label>
+          <input type="text" id="itemName" placeholder="مثال: Espresso Premium">
+        </div>
+        <div class="form-group">
+          <label for="itemNameAr">اسم الصنف بالعربية:</label>
+          <input type="text" id="itemNameAr" placeholder="مثال: إسبريسو مميز">
+        </div>
+        <div class="form-group">
+          <label for="itemDesc">الوصف:</label>
+          <textarea id="itemDesc" rows="3" placeholder="اكتب وصفاً مختصراً للصنف..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="itemPrice">السعر (دج):</label>
+          <input type="number" id="itemPrice" placeholder="مثال: 250">
+        </div>
+        <div class="form-group">
+          <label>صورة الصنف:</label>
+          <div class="image-options">
+            <div class="image-option-tab active" id="tabUpload" onclick="switchImageSource('upload')">تحميل ملف صورة</div>
+            <div class="image-option-tab" id="tabUrl" onclick="switchImageSource('url')">رابط صورة (URL)</div>
+          </div>
+          
+          <div class="image-input-container" id="uploadContainer">
+            <input type="file" id="itemFile" accept="image/*" onchange="handleImageUpload(event)">
+            <small style="color: rgba(245, 236, 215, 0.4); font-size: 0.75rem;">سيتم ضغط الصورة تلقائياً لتوفير المساحة.</small>
+          </div>
+          
+          <div class="image-input-container" id="urlContainer" style="display: none;">
+            <input type="text" id="itemImgUrl" placeholder="أدخل رابط الصورة المباشر">
+          </div>
+          
+          <input type="hidden" id="itemImgData">
+        </div>
+        <button class="admin-btn-save" id="btnSave" onclick="saveNewItem()">إضافة الصنف للقائمة</button>
+        <button class="admin-btn-logout" onclick="logoutAdmin()">تسجيل الخروج</button>
+      </div>
+    </div>
+  </div>
+  <!-- Hidden Canvas for Image Compression -->
+  <canvas id="compressCanvas" style="display: none;"></canvas>
+  <script>
+    const BIN_ID = '6a3071d8da38895dfec656df';
+    const API_KEY = '$2a$10$AWCCj9P0s3jl85UZnR311.itIEM3ndzaA6w5v.jwEdTjGZG56FO3u';
+    let dynamicItems = [];
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          e.target.style.transitionDelay = (i * 0.08) + 's';
+          e.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Scroll Navbar effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 80) {
+        nav.style.background = 'rgba(28,16,9,0.97)';
+        nav.style.backdropFilter = 'blur(12px)';
+      } else {
+        nav.style.background = 'linear-gradient(to bottom, rgba(28,16,9,0.95), transparent)';
+      }
+    });
+    // Menu Filter
+    function filterMenu(cat) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      
+      // Handle when filterMenu is called directly or from event
+      if (window.event && window.event.target) {
+        window.event.target.classList.add('active');
+      }
+      
+      document.querySelectorAll('.menu-card').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.classList.add('visible');
+        } else {
+          card.classList.remove('visible');
+        }
+      });
+    }
+    // On Load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadDynamicItems();
+      updateHardcodedLinks();
+      if (sessionStorage.getItem('isAdmin') === 'true') {
+        enableAdminMode();
+      }
+    });
+
+    // Helper to update hardcoded product links with URL parameters
+    function updateHardcodedLinks() {
+      const cards = document.querySelectorAll('#menuGrid .menu-card:not(.dynamic-card)');
+      cards.forEach((card, idx) => {
+        const nameEl = card.querySelector('.card-name');
+        const nameArEl = card.querySelector('.card-name-ar');
+        const priceEl = card.querySelector('.card-price');
+        const imgEl = card.querySelector('.card-img');
+        
+        if (nameEl && priceEl && imgEl) {
+          const name = nameEl.textContent.trim();
+          const nameAr = nameArEl ? nameArEl.textContent.trim() : '';
+          const priceText = priceEl.textContent.trim();
+          const price = parseFloat(priceText.replace(/[^\d]/g, '')) || 0;
+          const image = imgEl.getAttribute('src') || '';
+          
+          const orderLink = card.querySelector('.card-footer a') || card.querySelector('a');
+          if (orderLink) {
+            orderLink.href = `order.html?name=${encodeURIComponent(name)}&nameAr=${encodeURIComponent(nameAr)}&price=${price}&image=${encodeURIComponent(image)}`;
+          }
+        }
+      });
+    }
+
+    // Fetch dynamic items from JSONBin
+    function loadDynamicItems() {
+      fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+        method: 'GET',
+        headers: {
+          'X-Master-Key': API_KEY
+        }
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('فشل جلب البيانات');
+        return response.json();
+      })
+      .then(data => {
+        dynamicItems = data.record.items || [];
+        renderDynamicItems();
+      })
+      .catch(err => {
+        console.error('Error fetching dynamic items:', err);
+      });
+    }
+    // Render Dynamic Items in Grid
+    function renderDynamicItems() {
+      // Remove any previously rendered dynamic cards to avoid duplicates
+      document.querySelectorAll('.dynamic-card').forEach(el => el.remove());
+      const menuGrid = document.getElementById('menuGrid');
+      dynamicItems.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'menu-card visible dynamic-card';
+        card.dataset.cat = item.category;
+        
+        const imgSrc = item.image || 'ph9.png';
+        card.innerHTML = `
+          <button class="delete-badge" onclick="deleteItem(${index}, event)" title="حذف">🗑️</button>
+          <img class="card-img" src="${imgSrc}" alt="${item.name}">
+          <div class="card-name">${item.name}</div>
+          <div class="card-name-ar">${item.nameAr || ''}</div>
+          <div class="card-desc">${item.description || ''}</div>
+          <div class="card-footer">
+            <div class="card-price">${item.price}<span>دج</span></div>
+            <a href="order.html?name=${encodeURIComponent(item.name)}&nameAr=${encodeURIComponent(item.nameAr || '')}&price=${item.price}&image=${encodeURIComponent(imgSrc)}" class="btn-ghost" style="padding: 0.4rem 1rem; font-size: 0.75rem;">اطلب الآن</a>
+          </div>
+        `;
+        menuGrid.appendChild(card);
+        // Observe the new element for fade-in animations
+        observer.observe(card);
+      });
+      
+      // Refilter to match current active tab
+      const activeTabBtn = document.querySelector('.tab-btn.active');
+      if (activeTabBtn) {
+        const btnText = activeTabBtn.textContent.trim();
+        let cat = 'all';
+        if (btnText.includes('قهوة')) cat = 'coffee';
+        else if (btnText.includes('كريب')) cat = 'crepe';
+        else if (btnText.includes('وافل')) cat = 'waffle';
+        
+        document.querySelectorAll('.menu-card').forEach(card => {
+          if (cat === 'all' || card.dataset.cat === cat) {
+            card.classList.add('visible');
+          } else {
+            card.classList.remove('visible');
+          }
+        });
+      }
+    }
+    // Admin UI Actions
+    function openAdmin() {
+      const modal = document.getElementById('adminModal');
+      modal.classList.add('active');
+      
+      if (sessionStorage.getItem('isAdmin') === 'true') {
+        document.getElementById('authPanel').style.display = 'none';
+        document.getElementById('formPanel').style.display = 'block';
+      } else {
+        document.getElementById('authPanel').style.display = 'block';
+        document.getElementById('formPanel').style.display = 'none';
+        document.getElementById('adminPass').value = '';
+      }
+    }
+    // Enter key support for password prompt
+    document.getElementById('adminPass').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        checkPassword();
+      }
+    });
+    function closeAdmin() {
+      document.getElementById('adminModal').classList.remove('active');
+    }
+    function checkPassword() {
+      const pass = document.getElementById('adminPass').value;
+      if (pass === 'keycoffee12') {
+        sessionStorage.setItem('isAdmin', 'true');
+        enableAdminMode();
+        document.getElementById('authPanel').style.display = 'none';
+        document.getElementById('formPanel').style.display = 'block';
+      } else {
+        alert('كلمة المرور غير صحيحة!');
+      }
+    }
+    function logoutAdmin() {
+      sessionStorage.removeItem('isAdmin');
+      disableAdminMode();
+      document.getElementById('authPanel').style.display = 'block';
+      document.getElementById('formPanel').style.display = 'none';
+      closeAdmin();
+    }
+    function enableAdminMode() {
+      document.body.classList.add('admin-mode');
+    }
+    function disableAdminMode() {
+      document.body.classList.remove('admin-mode');
+    }
+    // Image Upload Source switching
+    function switchImageSource(src) {
+      document.getElementById('tabUpload').classList.toggle('active', src === 'upload');
+      document.getElementById('tabUrl').classList.toggle('active', src === 'url');
+      document.getElementById('uploadContainer').style.display = src === 'upload' ? 'block' : 'none';
+      document.getElementById('urlContainer').style.display = src === 'url' ? 'block' : 'none';
+      
+      // Clear values when switching
+      document.getElementById('itemFile').value = '';
+      document.getElementById('itemImgUrl').value = '';
+      document.getElementById('itemImgData').value = '';
+    }
+    // Image Compressor
+    function handleImageUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function(event) {
+        const img = new Image();
+        img.src = event.target.result;
+        img.onload = function() {
+          const canvas = document.getElementById('compressCanvas');
+          const MAX_WIDTH = 400;
+          const MAX_HEIGHT = 400;
+          let width = img.width;
+          let height = img.height;
+          if (width > height) {
+            if (width > MAX_WIDTH) {
+              height *= MAX_WIDTH / width;
+              width = MAX_WIDTH;
+            }
+          } else {
+            if (height > MAX_HEIGHT) {
+              width *= MAX_HEIGHT / height;
+              height = MAX_HEIGHT;
+            }
+          }
+          
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          
+          // Get compressed Base64 JPEG
+          const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
+          document.getElementById('itemImgData').value = compressedDataUrl;
+        };
+      };
+    }
+    // Save item to JSONBin
+    function saveNewItem() {
+      const category = document.getElementById('itemCat').value;
+      const name = document.getElementById('itemName').value.trim();
+      const nameAr = document.getElementById('itemNameAr').value.trim();
+      const description = document.getElementById('itemDesc').value.trim();
+      const price = document.getElementById('itemPrice').value.trim();
+      
+      const isUrlTab = document.getElementById('tabUrl').classList.contains('active');
+      let image = '';
+      
+      if (isUrlTab) {
+        image = document.getElementById('itemImgUrl').value.trim();
+      } else {
+        image = document.getElementById('itemImgData').value;
+      }
+      if (!name || !price) {
+        alert('الرجاء إدخال الاسم والسعر على الأقل!');
+        return;
+      }
+      const saveBtn = document.getElementById('btnSave');
+      saveBtn.disabled = true;
+      saveBtn.innerText = 'جاري الحفظ...';
+      const newItem = {
+        category,
+        name,
+        nameAr,
+        description,
+        price,
+        image
+      };
+      // Add to local array and PUT
+      const updatedItems = [...dynamicItems, newItem];
+      fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Master-Key': API_KEY
+        },
+        body: JSON.stringify({ items: updatedItems })
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('فشل حفظ البيانات سحابياً');
+        return res.json();
+      })
+      .then(data => {
+        dynamicItems = updatedItems;
+        renderDynamicItems();
+        closeAdmin();
+        // Clear fields
+        document.getElementById('itemName').value = '';
+        document.getElementById('itemNameAr').value = '';
+        document.getElementById('itemDesc').value = '';
+        document.getElementById('itemPrice').value = '';
+        document.getElementById('itemFile').value = '';
+        document.getElementById('itemImgUrl').value = '';
+        document.getElementById('itemImgData').value = '';
+        alert('تمت إضافة الصنف بنجاح!');
+      })
+      .catch(err => {
+        alert('حدث خطأ أثناء الحفظ: ' + err.message);
+      })
+      .finally(() => {
+        saveBtn.disabled = false;
+        saveBtn.innerText = 'إضافة الصنف للقائمة';
+      });
+    }
+    // Delete item from JSONBin
+    function deleteItem(index, e) {
+      if (e) e.stopPropagation(); // Prevent card trigger clicks
+      
+      if (!confirm('هل أنت متأكد من رغبتك في حذف هذا الصنف؟')) return;
+      const updatedItems = [...dynamicItems];
+      updatedItems.splice(index, 1);
+      fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Master-Key': API_KEY
+        },
+        body: JSON.stringify({ items: updatedItems })
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('فشل حذف الصنف سحابياً');
+        return res.json();
+      })
+      .then(data => {
+        dynamicItems = updatedItems;
+        renderDynamicItems();
+        alert('تم حذف الصنف بنجاح!');
+      })
+      .catch(err => {
+        alert('حدث خطأ أثناء الحذف: ' + err.message);
+      });
+    }
+  </script>
+</body>
+</html>
